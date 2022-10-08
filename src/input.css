@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+:root {
+  /* Primary */
+
+  --activeInput: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+  --red: hsl(0, 100%, 66%);
+
+  /* Neutral */
+
+  --white: hsl(0, 0%, 100%);
+  --lightGrayishViolet: hsl(270, 3%, 87%);
+  --darkGrayishViolet: hsl(279, 6%, 55%);
+  --veryDarkViolet: hsl(278, 68%, 11%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  background: linear-gradient(to left, hsl(249, 99%, 64%), hsl(278, 97%, 13%));
+}
+
+.btn-submit:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #600594 0%, #6448fe 100%);
+  transform: translate3d(0px, 0px, 0) scale(0.9);
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.btn-submit[valid="yes"]:hover:before {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn-submit::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
